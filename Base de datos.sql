@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [ProyectoFinalBD]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Database [ProyectoFinalBD]    Script Date: 1/29/2021 2:38:05 PM ******/
 CREATE DATABASE [ProyectoFinalBD]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [ProyectoFinalBD] SET QUERY_STORE = OFF
 GO
 USE [ProyectoFinalBD]
 GO
-/****** Object:  Table [dbo].[Carrera]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Carrera]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[Carrera](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Corredor]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Corredor]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -110,12 +110,12 @@ CREATE TABLE [dbo].[Corredor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DebitoSansion]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[DebitoSancion]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[DebitoSansion](
+CREATE TABLE [dbo].[DebitoSancion](
 	[Id] [int] NOT NULL,
 	[IdSansionXCarrera] [int] NOT NULL,
  CONSTRAINT [PK_DebitoSansion] PRIMARY KEY CLUSTERED 
@@ -124,7 +124,7 @@ CREATE TABLE [dbo].[DebitoSansion](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Equipo]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Equipo]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -138,7 +138,7 @@ CREATE TABLE [dbo].[Equipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Etapas]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Etapas]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +154,7 @@ CREATE TABLE [dbo].[Etapas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[GanadorPremioMontaña]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[GanadorPremioMontaña]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -170,7 +170,7 @@ CREATE TABLE [dbo].[GanadorPremioMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Giro]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Giro]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -185,7 +185,7 @@ CREATE TABLE [dbo].[Giro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[IGXEQXCorredor]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[IGXEQXCorredor]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -203,7 +203,7 @@ CREATE TABLE [dbo].[IGXEQXCorredor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InstanciaGiro]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[InstanciaGiro]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -220,7 +220,7 @@ CREATE TABLE [dbo].[InstanciaGiro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InstGiroXEquipo]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[InstGiroXEquipo]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -237,7 +237,7 @@ CREATE TABLE [dbo].[InstGiroXEquipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Juez]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Juez]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -251,7 +251,7 @@ CREATE TABLE [dbo].[Juez](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Llegada]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Llegada]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -267,7 +267,7 @@ CREATE TABLE [dbo].[Llegada](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovimientoPuntosMontaña]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[MovimientoPuntosMontaña]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -284,7 +284,7 @@ CREATE TABLE [dbo].[MovimientoPuntosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovimientoPuntosRegularidad]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[MovimientoPuntosRegularidad]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -302,7 +302,7 @@ CREATE TABLE [dbo].[MovimientoPuntosRegularidad](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovTiempo]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[MovTiempo]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -320,7 +320,7 @@ CREATE TABLE [dbo].[MovTiempo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pais]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[Pais]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -334,7 +334,7 @@ CREATE TABLE [dbo].[Pais](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PremioMontaña]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[PremioMontaña]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -349,13 +349,14 @@ CREATE TABLE [dbo].[PremioMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PremiosMontaña]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[PremiosMontaña]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[PremiosMontaña](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdGiro] [int] NOT NULL,
 	[Nombre] [varchar](100) NOT NULL,
 	[Puntos] [int] NOT NULL,
 	[IdEtapa] [int] NOT NULL,
@@ -365,12 +366,12 @@ CREATE TABLE [dbo].[PremiosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SansionXCarrera]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[SancionXCarrera]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[SansionXCarrera](
+CREATE TABLE [dbo].[SancionXCarrera](
 	[Id] [int] NOT NULL,
 	[IdCorredor] [int] NOT NULL,
 	[IdJuez] [int] NOT NULL,
@@ -380,7 +381,7 @@ CREATE TABLE [dbo].[SansionXCarrera](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovimiento]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[TipoMovimiento]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -394,7 +395,7 @@ CREATE TABLE [dbo].[TipoMovimiento](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovPtosMontaña]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[TipoMovPtosMontaña]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -408,7 +409,7 @@ CREATE TABLE [dbo].[TipoMovPtosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovPuntosRegular]    Script Date: 1/27/2021 10:39:32 PM ******/
+/****** Object:  Table [dbo].[TipoMovPuntosRegular]    Script Date: 1/29/2021 2:38:05 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -427,13 +428,14 @@ REFERENCES [dbo].[Etapas] ([Id])
 GO
 ALTER TABLE [dbo].[Carrera] CHECK CONSTRAINT [FK_Carrera_Etapas]
 GO
-ALTER TABLE [dbo].[DebitoSansion]  WITH CHECK ADD  CONSTRAINT [FK_DebitoSansion_SansionXCarrera] FOREIGN KEY([IdSansionXCarrera])
-REFERENCES [dbo].[SansionXCarrera] ([Id])
+ALTER TABLE [dbo].[DebitoSancion]  WITH CHECK ADD  CONSTRAINT [FK_DebitoSansion_SansionXCarrera] FOREIGN KEY([IdSansionXCarrera])
+REFERENCES [dbo].[SancionXCarrera] ([Id])
 GO
-ALTER TABLE [dbo].[DebitoSansion] CHECK CONSTRAINT [FK_DebitoSansion_SansionXCarrera]
+ALTER TABLE [dbo].[DebitoSancion] CHECK CONSTRAINT [FK_DebitoSansion_SansionXCarrera]
 GO
 ALTER TABLE [dbo].[Etapas]  WITH CHECK ADD  CONSTRAINT [FK_Etapas_Giro] FOREIGN KEY([IdGiro])
 REFERENCES [dbo].[Giro] ([Id])
+ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Etapas] CHECK CONSTRAINT [FK_Etapas_Giro]
 GO
@@ -457,8 +459,14 @@ REFERENCES [dbo].[PremioMontaña] ([Id])
 GO
 ALTER TABLE [dbo].[GanadorPremioMontaña] CHECK CONSTRAINT [FK_GanadorPremioMontaña_PremioMontaña]
 GO
+ALTER TABLE [dbo].[GanadorPremioMontaña]  WITH CHECK ADD  CONSTRAINT [FK_GanadorPremioMontaña_PremiosMontaña] FOREIGN KEY([IdPremioMontaña])
+REFERENCES [dbo].[PremiosMontaña] ([Id])
+GO
+ALTER TABLE [dbo].[GanadorPremioMontaña] CHECK CONSTRAINT [FK_GanadorPremioMontaña_PremiosMontaña]
+GO
 ALTER TABLE [dbo].[Giro]  WITH CHECK ADD  CONSTRAINT [FK_Giro_Pais] FOREIGN KEY([IdPais])
 REFERENCES [dbo].[Pais] ([Id])
+ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Giro] CHECK CONSTRAINT [FK_Giro_Pais]
 GO
@@ -474,6 +482,7 @@ ALTER TABLE [dbo].[IGXEQXCorredor] CHECK CONSTRAINT [FK_IGXEQXCorredor_InstGiroX
 GO
 ALTER TABLE [dbo].[InstanciaGiro]  WITH CHECK ADD  CONSTRAINT [FK_InstanciaGiro_Giro] FOREIGN KEY([IdGiro])
 REFERENCES [dbo].[Giro] ([Id])
+ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[InstanciaGiro] CHECK CONSTRAINT [FK_InstanciaGiro_Giro]
 GO
@@ -542,15 +551,21 @@ REFERENCES [dbo].[Etapas] ([Id])
 GO
 ALTER TABLE [dbo].[PremiosMontaña] CHECK CONSTRAINT [FK_PremiosMontaña_Etapas]
 GO
-ALTER TABLE [dbo].[SansionXCarrera]  WITH CHECK ADD  CONSTRAINT [FK_SansionXCarrera_Corredor] FOREIGN KEY([IdCorredor])
+ALTER TABLE [dbo].[PremiosMontaña]  WITH CHECK ADD  CONSTRAINT [FK_PremiosMontaña_Giro] FOREIGN KEY([IdGiro])
+REFERENCES [dbo].[Giro] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[PremiosMontaña] CHECK CONSTRAINT [FK_PremiosMontaña_Giro]
+GO
+ALTER TABLE [dbo].[SancionXCarrera]  WITH CHECK ADD  CONSTRAINT [FK_SansionXCarrera_Corredor] FOREIGN KEY([IdCorredor])
 REFERENCES [dbo].[Corredor] ([Id])
 GO
-ALTER TABLE [dbo].[SansionXCarrera] CHECK CONSTRAINT [FK_SansionXCarrera_Corredor]
+ALTER TABLE [dbo].[SancionXCarrera] CHECK CONSTRAINT [FK_SansionXCarrera_Corredor]
 GO
-ALTER TABLE [dbo].[SansionXCarrera]  WITH CHECK ADD  CONSTRAINT [FK_SansionXCarrera_Juez] FOREIGN KEY([IdJuez])
+ALTER TABLE [dbo].[SancionXCarrera]  WITH CHECK ADD  CONSTRAINT [FK_SansionXCarrera_Juez] FOREIGN KEY([IdJuez])
 REFERENCES [dbo].[Juez] ([Id])
 GO
-ALTER TABLE [dbo].[SansionXCarrera] CHECK CONSTRAINT [FK_SansionXCarrera_Juez]
+ALTER TABLE [dbo].[SancionXCarrera] CHECK CONSTRAINT [FK_SansionXCarrera_Juez]
 GO
 USE [master]
 GO
