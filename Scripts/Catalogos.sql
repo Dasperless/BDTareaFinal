@@ -7,137 +7,237 @@ SET @xmlData = (
 		SELECT *
 		FROM OPENROWSET(BULK 'C:\Users\dvarg\Desktop\TEC\2020\Segundo Semestre\Bases de datos\Proyectos\Proyecto Final\BDTareaFinal\XML\Catalogo-Tarea-Final.xml', SINGLE_BLOB) AS xmlData
 		)
+DECLARE @lo INT, @hi INT
+DECLARE @Id INT, @Nombre VARCHAR(100)
+DECLARE @IdGiro INT, @IdEtapa INT, @Puntos INT
+DECLARE @IdPais INT
+DECLARE @OutResultCode INT
+
+
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
+FROM  @xmlData.nodes('Catalogos/Paises/Pais') xmlData(ref)
 
 --INSERTA LOS CATÁLOGOS DE PAISES.
-INSERT INTO Pais (
-	id,
-	Nombre
-	)
-SELECT ref.value('@Id', 'int'),
-	ref.value('@Nombre', 'varchar(100)')
-FROM @xmlData.nodes('Catalogos/Paises/Pais') xmlData(ref)
-LEFT JOIN Pais P
-	ON P.id = ref.value('@Id', 'int')
-WHERE P.id IS NULL
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)')	
+		FROM @xmlData.nodes('Catalogos/Paises/Pais') Pais(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarPais]
+			@Id,
+			@Nombre,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
 
 --INSERTA LOS CATÁLOGOS DE GIROS.
-INSERT INTO Giro(
-	id,
-	Nombre,
-	IdPais
-	)
-SELECT ref.value('@Id', 'int'),
-	ref.value('@Nombre', 'varchar(100)'),
-	ref.value('@IdPais', 'int')
-FROM @xmlData.nodes('Catalogos/Giros/Giro') xmlData(ref)
-LEFT JOIN Giro G
-	ON G.id = ref.value('@Id', 'int')
-WHERE G.id IS NULL
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
+FROM  @xmlData.nodes('Catalogos/Giros/Giro') xmlData(ref)
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)'),
+			@IdPais = ref.value('@IdPais', 'int')
+		FROM @xmlData.nodes('Catalogos/Giros/Giro') Pais(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarGiro]
+			@Id,
+			@Nombre,
+			@IdPais,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
 
 --INSERTA LOS CATALOGOS DE LAS ETAPAS
-INSERT INTO Etapas(
-	Id,
-	IdGiro,
-	Nombre,
-	Puntos
-	)
-SELECT ref.value('@Id', 'int'),
-	ref.value('@IdGiro', 'int'),
-	ref.value('@Nombre', 'varchar(100)'),
-	ref.value('@Puntos', 'int')
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
 FROM @xmlData.nodes('Catalogos/Etapas/Etapa') xmlData(ref)
-LEFT JOIN Etapas E
-	ON E.id = ref.value('@Id', 'int')
-WHERE E.id IS NULL
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@IdGiro = ref.value('@IdGiro', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)'),
+			@Puntos = ref.value('@Puntos', 'int')
+		FROM @xmlData.nodes('Catalogos/Etapas/Etapa') xmlData(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarEtapa]
+			@Id,
+			@IdGiro,
+			@Nombre,
+			@Puntos,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
+
 
 --SE INSERTAN LOS CATALOGOS DE LOS PREMIOS DE MONTAÑA.
-INSERT INTO PremiosMontaña(
+DECLARE @TablaPremiosMontaña TABLE (Sec INT IDENTITY (1,1), IdGiro INT, IdEtapa INT, Nombre Varchar(100), Puntos INT)	
+INSERT INTO @TablaPremiosMontaña(
 	IdGiro,
 	IdEtapa,
 	Nombre,
 	Puntos
 	)
-SELECT ref.value('@IdGiro', 'int'),
-	ref.value('@IdEtapa', 'int'),
-	ref.value('@Nombre', 'varchar(100)'),
-	ref.value('@Puntos', 'int')
+SELECT	ref.value('@IdGiro', 'int'),
+		ref.value('@IdEtapa', 'int'),
+		ref.value('@Nombre', 'varchar(100)'),
+		ref.value('@Puntos', 'int')
 FROM @xmlData.nodes('Catalogos/PremiosMontana/PremioMontana') xmlData(ref)
-LEFT JOIN PremiosMontaña PM
-	ON PM.id = ref.value('@Id', 'int')
-WHERE PM.id IS NULL
+
+SELECT  @hi = MAX(Sec),
+		@lo = MIN(Sec)
+FROM 	@TablaPremiosMontaña
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @IdGiro = T.IdGiro,
+			@IdEtapa = T.IdEtapa,
+			@Nombre = T.Nombre,
+			@Puntos = T.Puntos
+		FROM @TablaPremiosMontaña T
+		WHERE Sec = @lo
+
+		EXEC [dbo].[InsertarPremiosMontaña]
+			@IdGiro,
+			@IdEtapa,
+			@Nombre,
+			@Puntos,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1		
+	END;
 
 --SE INSERTAN LOS CATÁLOGOS DE LOS EQUIPOS.
-INSERT INTO Equipo(
-	id,
-	Nombre
-	)
-SELECT ref.value('@Id', 'int'),
-	ref.value('@Nombre', 'varchar(50)')
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
 FROM @xmlData.nodes('Catalogos/Equipos/Equipo') xmlData(ref)
-LEFT JOIN Equipo EQ
-	ON EQ.id = ref.value('@Id', 'int')
-WHERE EQ.id IS NULL
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)')	
+		FROM @xmlData.nodes('Catalogos/Equipos/Equipo') xmlData(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarEquipo]
+			@Id,
+			@Nombre,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
 
 --SE INSERTAN LOS CATÁLOGOS DE LOS CORREDORES.
-INSERT INTO Corredor(
-		id,
-		Nombre
-	)
-SELECT ref.value('@Id', 'INT'),
-	ref.value('@Nombre', 'varchar(50)')
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
 FROM @xmlData.nodes('Catalogos/Corredores/Corredor') xmlData(ref)
-LEFT JOIN Corredor C
-	ON C.id = ref.value('@Id', 'int')
-WHERE C.id IS NULL
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)')	
+		FROM @xmlData.nodes('Catalogos/Corredores/Corredor') xmlData(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarCorredor]
+			@Id,
+			@Nombre,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
 
 --CATÁLOGO DE LOS JUECES
-INSERT INTO Juez(
-	id,
-	Nombre
-	)
-SELECT ref.value('@Id', 'INT'),
-	ref.value('@Nombre', 'varchar(100)')
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
 FROM @xmlData.nodes('Catalogos/Jueces/Juez') xmlData(ref)
-LEFT JOIN Juez J
-	ON J.id = ref.value('@Id', 'int')
-WHERE J.id IS NULL
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)')	
+		FROM @xmlData.nodes('Catalogos/Jueces/Juez') xmlData(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarJuez]
+			@Id,
+			@Nombre,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
 
 --CATÁLOGO DE TIPOS DE MOVIMIENTO TIEMPO
-INSERT INTO TipoMovimiento (
-	Id,
-	Nombre
-	)
-SELECT ref.value('@Id', 'INT'),
-	ref.value('@Nombre', 'varchar(50)')
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
 FROM @xmlData.nodes('Catalogos/TiposMovimientoTiempo/TipoMovimientoTiempo') xmlData(ref)
-LEFT JOIN TipoMovimiento TM
-	ON TM.id = ref.value('@Id', 'int')
-WHERE TM.id IS NULL
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)')	
+		FROM @xmlData.nodes('Catalogos/TiposMovimientoTiempo/TipoMovimientoTiempo') xmlData(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarTipoMovimiento]
+			@Id,
+			@Nombre,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
 
 --CATÁLOGOS DE TIPOS DE MOVIMIENTOS PUNTOS REGULARIDAD
-INSERT INTO TipoMovPuntosRegular(
-	Id,
-	Nombre
-	)
-SELECT ref.value('@Id', 'INT'),
-	ref.value('@Nombre', 'varchar(50)')
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
 FROM @xmlData.nodes('Catalogos/TiposMovimientosPuntosRegularidad/TipoMovimientosPuntosRegularidad') xmlData(ref)
-LEFT JOIN TipoMovPuntosRegular TMovR
-	ON TMovR.id = ref.value('@Id', 'int')
-WHERE TMovR.id IS NULL
+
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)')	
+		FROM @xmlData.nodes('Catalogos/TiposMovimientosPuntosRegularidad/TipoMovimientosPuntosRegularidad') xmlData(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarTipoMovPuntosRegular]
+			@Id,
+			@Nombre,
+			@OutResultCode OUTPUT
+
+		SET @lo = @lo +1
+	END;
 
 --CATÁLOGOS DE TIPOS DE MOVIMIENTOS PUNTOS MONTAÑA
-INSERT INTO TipoMovPtosMontaña(
-	Id,
-	Nombre
-	)
-SELECT ref.value('@Id', 'INT'),
-	ref.value('@Nombre', 'varchar(50)')
+SELECT  @hi = MAX(ref.value('@Id', 'int')),
+		@lo = MIN(ref.value('@Id', 'int'))
 FROM @xmlData.nodes('Catalogos/TiposMovimientoPuntosMontana/TipoMovimientoPuntosMontana') xmlData(ref)
-LEFT JOIN TipoMovPtosMontaña TMovPM
-	ON TMovPM.id = ref.value('@Id', 'int')
-WHERE TMovPM.id IS NULL
 
+WHILE @lo <= @hi
+	BEGIN
+		SELECT @Id = ref.value('@Id', 'int'),
+			@Nombre = ref.value('@Nombre', 'varchar(100)')	
+		FROM @xmlData.nodes('Catalogos/TiposMovimientoPuntosMontana/TipoMovimientoPuntosMontana') xmlData(ref)
+		WHERE ref.value('@Id', 'int') = @lo
+
+		EXEC [dbo].[InsertarTipoMovPtosMontaña]
+			@Id,
+			@Nombre,
+			@OutResultCode OUTPUT
+
+		--SELECT @OutResultCode
+		SET @lo = @lo +1
+	END;
 SELECT * FROM Pais
 SELECT * FROM Giro
 SELECT * FROM Etapas
@@ -147,6 +247,7 @@ SELECT * FROM TipoMovimiento
 SELECT * FROM TipoMovPuntosRegular
 SELECT * FROM TipoMovPtosMontaña
 
+--SELECT * FROM Errores
 --DELETE Pais
 --DELETE Giro
 --DELETE Etapas
