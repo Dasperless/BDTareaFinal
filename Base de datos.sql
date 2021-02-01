@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [ProyectoFinalBD]    Script Date: 1/29/2021 2:38:05 PM ******/
+/****** Object:  Database [ProyectoFinalBD]    Script Date: 1/29/2021 2:38:05 PM  MSSQL15.MSSQLSERVER ->Compu Jacob ******/ 
 CREATE DATABASE [ProyectoFinalBD]
  CONTAINMENT = NONE
  ON  PRIMARY 
