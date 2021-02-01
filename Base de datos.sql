@@ -1,8 +1,6 @@
 USE [master]
 GO
-
-/****** Object:  Database [ProyectoFinalBD]    Script Date: 1/29/2021 2:38:05 PM  MSSQL15.MSSQLSERVER ->Compu Jacob ******/ 
-
+/****** Object:  Database [ProyectoFinalBD]    Script Date: 2/1/2021 8:32:51 AM ******/
 CREATE DATABASE [ProyectoFinalBD]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +80,7 @@ ALTER DATABASE [ProyectoFinalBD] SET QUERY_STORE = OFF
 GO
 USE [ProyectoFinalBD]
 GO
-/****** Object:  Table [dbo].[Carrera]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Carrera]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -91,14 +89,14 @@ CREATE TABLE [dbo].[Carrera](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[IdEtapa] [int] NOT NULL,
 	[Fecha] [date] NOT NULL,
-	[HoraInicio] [int] NOT NULL,
+	[HoraInicio] [time](7) NOT NULL,
  CONSTRAINT [PK_Carrera] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Corredor]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Corredor]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -112,7 +110,7 @@ CREATE TABLE [dbo].[Corredor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DebitoSancion]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[DebitoSancion]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -126,7 +124,7 @@ CREATE TABLE [dbo].[DebitoSancion](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Equipo]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Equipo]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -140,7 +138,7 @@ CREATE TABLE [dbo].[Equipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Errores]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Errores]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +154,7 @@ CREATE TABLE [dbo].[Errores](
 	[GETDATE] [datetime] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Etapas]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Etapas]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -172,7 +170,7 @@ CREATE TABLE [dbo].[Etapas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[GanadorPremioMontaña]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[GanadorPremioMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -188,7 +186,7 @@ CREATE TABLE [dbo].[GanadorPremioMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Giro]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Giro]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -203,7 +201,7 @@ CREATE TABLE [dbo].[Giro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[GiroXEquipo]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[GiroXEquipo]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -218,7 +216,7 @@ CREATE TABLE [dbo].[GiroXEquipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[IGXEQXCorredor]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[IGXEQXCorredor]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -236,7 +234,7 @@ CREATE TABLE [dbo].[IGXEQXCorredor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InstanciaGiro]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[InstanciaGiro]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -253,7 +251,7 @@ CREATE TABLE [dbo].[InstanciaGiro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InstGiroXEquipo]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[InstGiroXEquipo]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -270,7 +268,7 @@ CREATE TABLE [dbo].[InstGiroXEquipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Juez]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Juez]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -284,7 +282,7 @@ CREATE TABLE [dbo].[Juez](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Llegada]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Llegada]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -294,14 +292,14 @@ CREATE TABLE [dbo].[Llegada](
 	[IdCorredor] [int] NOT NULL,
 	[IdCarrera] [int] NOT NULL,
 	[IdMovTiempo] [int] NOT NULL,
-	[HoraFin] [int] NOT NULL,
+	[HoraFin] [time](7) NOT NULL,
  CONSTRAINT [PK_Llegada] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovimientoPuntosMontaña]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[MovimientoPuntosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -318,7 +316,7 @@ CREATE TABLE [dbo].[MovimientoPuntosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovimientoPuntosRegularidad]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[MovimientoPuntosRegularidad]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -327,7 +325,7 @@ CREATE TABLE [dbo].[MovimientoPuntosRegularidad](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[IdIGXEQXCorredor] [int] NOT NULL,
 	[IdLlegada] [int] NOT NULL,
-	[IdTIpoMovPuntosRegular] [int] NOT NULL,
+	[IdTIpo] [int] NOT NULL,
 	[CantidadPuntos] [int] NOT NULL,
 	[Fecha] [date] NOT NULL,
  CONSTRAINT [PK_MovimientoPuntosRegularidad] PRIMARY KEY CLUSTERED 
@@ -336,7 +334,7 @@ CREATE TABLE [dbo].[MovimientoPuntosRegularidad](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovTiempo]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[MovTiempo]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -353,7 +351,7 @@ CREATE TABLE [dbo].[MovTiempo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pais]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[Pais]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -367,38 +365,24 @@ CREATE TABLE [dbo].[Pais](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PremioMontaña]    Script Date: 1/31/2021 4:43:04 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[PremioMontaña](
-	[Id] [int] NOT NULL,
-	[Nombre] [varchar](50) NOT NULL,
-	[Puntos] [int] NOT NULL,
- CONSTRAINT [PK_PremioMontaña] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[PremiosMontaña]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[PremiosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[PremiosMontaña](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Nombre] [varchar](100) NOT NULL,
-	[Puntos] [int] NOT NULL,
+	[IdGiro] [int] NULL,
 	[IdEtapa] [int] NOT NULL,
+	[Nombre] [varchar](50) NOT NULL,
+	[Puntos] [int] NOT NULL,
  CONSTRAINT [PK_PremiosMontaña] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SancionXCarrera]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[SancionXCarrera]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -414,7 +398,7 @@ CREATE TABLE [dbo].[SancionXCarrera](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovimiento]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[TipoMovimiento]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -428,7 +412,7 @@ CREATE TABLE [dbo].[TipoMovimiento](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovPtosMontaña]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[TipoMovPtosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -442,7 +426,7 @@ CREATE TABLE [dbo].[TipoMovPtosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovPuntosRegular]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  Table [dbo].[TipoMovPuntosRegular]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -486,11 +470,6 @@ ALTER TABLE [dbo].[GanadorPremioMontaña]  WITH CHECK ADD  CONSTRAINT [FK_Ganado
 REFERENCES [dbo].[Corredor] ([Id])
 GO
 ALTER TABLE [dbo].[GanadorPremioMontaña] CHECK CONSTRAINT [FK_GanadorPremioMontaña_Corredor2]
-GO
-ALTER TABLE [dbo].[GanadorPremioMontaña]  WITH CHECK ADD  CONSTRAINT [FK_GanadorPremioMontaña_PremioMontaña] FOREIGN KEY([IdPremioMontaña])
-REFERENCES [dbo].[PremioMontaña] ([Id])
-GO
-ALTER TABLE [dbo].[GanadorPremioMontaña] CHECK CONSTRAINT [FK_GanadorPremioMontaña_PremioMontaña]
 GO
 ALTER TABLE [dbo].[GanadorPremioMontaña]  WITH CHECK ADD  CONSTRAINT [FK_GanadorPremioMontaña_PremiosMontaña] FOREIGN KEY([IdPremioMontaña])
 REFERENCES [dbo].[PremiosMontaña] ([Id])
@@ -574,7 +553,7 @@ REFERENCES [dbo].[Llegada] ([Id])
 GO
 ALTER TABLE [dbo].[MovimientoPuntosRegularidad] CHECK CONSTRAINT [FK_MovimientoPuntosRegularidad_Llegada]
 GO
-ALTER TABLE [dbo].[MovimientoPuntosRegularidad]  WITH CHECK ADD  CONSTRAINT [FK_MovimientoPuntosRegularidad_TipoMovPuntosRegular] FOREIGN KEY([IdTIpoMovPuntosRegular])
+ALTER TABLE [dbo].[MovimientoPuntosRegularidad]  WITH CHECK ADD  CONSTRAINT [FK_MovimientoPuntosRegularidad_TipoMovPuntosRegular] FOREIGN KEY([IdTIpo])
 REFERENCES [dbo].[TipoMovPuntosRegular] ([Id])
 GO
 ALTER TABLE [dbo].[MovimientoPuntosRegularidad] CHECK CONSTRAINT [FK_MovimientoPuntosRegularidad_TipoMovPuntosRegular]
@@ -609,7 +588,7 @@ REFERENCES [dbo].[Juez] ([Id])
 GO
 ALTER TABLE [dbo].[SancionXCarrera] CHECK CONSTRAINT [FK_SansionXCarrera_Juez]
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarCorredor]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarCorredor]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -669,7 +648,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarEquipo]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarEquipo]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -729,7 +708,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarEtapa]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarEtapa]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -793,7 +772,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarGiro]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarGiro]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -855,7 +834,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarJuez]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarJuez]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -915,7 +894,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarPais]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarPais]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -975,7 +954,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarPremiosMontaña]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarPremiosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1030,7 +1009,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarTipoMovimiento]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarTipoMovimiento]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1090,7 +1069,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPtosMontaña]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPtosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1150,7 +1129,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPuntosRegular]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPuntosRegular]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1210,7 +1189,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[ProcesarInstanciasGiro]    Script Date: 1/31/2021 4:43:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProcesarInstanciasGiro]    Script Date: 2/1/2021 8:32:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
