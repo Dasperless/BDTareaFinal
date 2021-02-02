@@ -44,11 +44,12 @@ WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS.
 		OUTER APPLY A.InstanciasGiros.nodes('InstanciaGiro') AS InsGiro(ref)
 		WHERE @AñoInicio = A.Año
 
+
 		WHILE @lo <= @hi --SE PROCESAN LAS INSTANCIAS DE LOS GIRO POR AÑO.
 			BEGIN
 				SELECT @InstanciaGiro = ref.query('.')
 				FROM @TablaAñoProcesar A
-				OUTER APPLY A.InstanciasGiros.nodes('InstanciaGiro') AS InsGiro(ref)
+				OUTER APPLY A.InstanciasGiros.nodes('InstanciaGiro') AS InsGiro(ref)	
 				WHERE @lo = ref.value('@IdGiro', 'INT')
 					AND A.Año = @AñoInicio
 
@@ -57,10 +58,31 @@ WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS.
 					@AñoInicio,
 					@OutResultCode OUTPUT
 
+				--SELECT @OutResultCode
 				SET @lo = @lo + 1
 			END;
 
 		SET @AñoInicio = @AñoInicio + 1
 	END;
-		--SELECT *
-		--FROM @TablaAñoProcesar
+
+SELECT * FROM InstanciaGiro
+SELECT * FROM InstGiroXEquipo
+SELECT * FROM IGXEQXCorredor
+SELECT * FROM Carrera
+SELECT * FROM MovTiempo
+SELECT * FROM Llegada
+SELECT * FROM SancionXCarrera
+SELECT * FROM GanadorPremioMontaña
+
+--DELETE InstanciaGiro
+--DELETE InstGiroXEquipo
+--DELETE IGXEQXCorredor
+--DELETE Carrera
+--DELETE MovTiempo
+--DELETE Llegada
+--DELETE SancionXCarrera
+--DELETE GanadorPremioMontaña
+
+
+
+--SELECT * FROM Errores E ORDER BY  E.[GETDATE] DESC

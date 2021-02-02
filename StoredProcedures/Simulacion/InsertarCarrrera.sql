@@ -13,7 +13,7 @@ CREATE
 ALTER PROCEDURE [dbo].[InsertarCarrera] --Nombre del procedimiento
 	@inIdEtapa INT
 	,@inCodigoInstanciaGiro VARCHAR(50)
-	,@inCodigoCarrera INT 
+	,@inCodigoCarrera VARCHAR(100) 
 	,@inFecha DATE
 	,@inHoraInicio TIME
 	,@OutIdInsertarCarrera INT OUTPUT

@@ -14,7 +14,7 @@ ALTER PROCEDURE [dbo].[InsertarInstanciaGiro] --Nombre del procedimiento
 	--Variables de entrada del SP
 	@inIdGiro INT
 	,@inCodigoInstancia	VARCHAR(50)
-	,@inYear DATE
+	,@inAño INT
 	,@inFechaInicio DATE
 	,@inFechaFin DATE
 	,@OutIdInsertarInstanciaGiro INT OUTPUT
@@ -43,14 +43,14 @@ BEGIN
 		INSERT INTO dbo.InstanciaGiro (
 			IdGiro
 			,CodigoInstancia
-			,Year
+			,Año
 			,FechaInicio
 			,FechaFinal
 			)
 		VALUES (
 			@inIdGiro
 			,@inCodigoInstancia
-			,@inYear
+			,@inAño
 			,@inFechaInicio
 			,@inFechaFin
 			)
