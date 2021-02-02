@@ -1,12 +1,12 @@
 USE [master]
 GO
-/****** Object:  Database [ProyectoFinalBD]    Script Date: 2/1/2021 8:32:51 AM MSSQL15.MSSQLSERVER******/
+/****** Object:  Database [ProyectoFinalBD]    Script Date: 2/1/2021 9:48:50 PM ******/
 CREATE DATABASE [ProyectoFinalBD]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'ProyectoFinalBD', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProyectoFinalBD.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'ProyectoFinalBD', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\ProyectoFinalBD.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'ProyectoFinalBD_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProyectoFinalBD_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'ProyectoFinalBD_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\ProyectoFinalBD_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
  WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
 ALTER DATABASE [ProyectoFinalBD] SET COMPATIBILITY_LEVEL = 150
@@ -80,7 +80,7 @@ ALTER DATABASE [ProyectoFinalBD] SET QUERY_STORE = OFF
 GO
 USE [ProyectoFinalBD]
 GO
-/****** Object:  Table [dbo].[Carrera]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Carrera]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[Carrera](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Corredor]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Corredor]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -110,7 +110,7 @@ CREATE TABLE [dbo].[Corredor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DebitoSancion]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[DebitoSancion]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -124,7 +124,7 @@ CREATE TABLE [dbo].[DebitoSancion](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Equipo]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Equipo]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -138,7 +138,7 @@ CREATE TABLE [dbo].[Equipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Errores]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Errores]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +154,7 @@ CREATE TABLE [dbo].[Errores](
 	[GETDATE] [datetime] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Etapas]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Etapas]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -170,7 +170,7 @@ CREATE TABLE [dbo].[Etapas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[GanadorPremioMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[GanadorPremioMontaña]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -186,7 +186,7 @@ CREATE TABLE [dbo].[GanadorPremioMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Giro]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Giro]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -201,7 +201,7 @@ CREATE TABLE [dbo].[Giro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[GiroXEquipo]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[GiroXEquipo]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +216,7 @@ CREATE TABLE [dbo].[GiroXEquipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[IGXEQXCorredor]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[IGXEQXCorredor]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -234,7 +234,7 @@ CREATE TABLE [dbo].[IGXEQXCorredor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InstanciaGiro]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[InstanciaGiro]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -251,7 +251,7 @@ CREATE TABLE [dbo].[InstanciaGiro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InstGiroXEquipo]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[InstGiroXEquipo]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -268,7 +268,7 @@ CREATE TABLE [dbo].[InstGiroXEquipo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Juez]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Juez]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -282,7 +282,7 @@ CREATE TABLE [dbo].[Juez](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Llegada]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Llegada]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -299,7 +299,7 @@ CREATE TABLE [dbo].[Llegada](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovimientoPuntosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[MovimientoPuntosMontaña]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -316,7 +316,7 @@ CREATE TABLE [dbo].[MovimientoPuntosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovimientoPuntosRegularidad]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[MovimientoPuntosRegularidad]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -325,7 +325,7 @@ CREATE TABLE [dbo].[MovimientoPuntosRegularidad](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[IdIGXEQXCorredor] [int] NOT NULL,
 	[IdLlegada] [int] NOT NULL,
-	[IdTIpo] [int] NOT NULL,
+	[IdTipoMovPuntosRegular] [int] NOT NULL,
 	[CantidadPuntos] [int] NOT NULL,
 	[Fecha] [date] NOT NULL,
  CONSTRAINT [PK_MovimientoPuntosRegularidad] PRIMARY KEY CLUSTERED 
@@ -334,7 +334,7 @@ CREATE TABLE [dbo].[MovimientoPuntosRegularidad](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MovTiempo]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[MovTiempo]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -351,7 +351,7 @@ CREATE TABLE [dbo].[MovTiempo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pais]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[Pais]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -365,7 +365,7 @@ CREATE TABLE [dbo].[Pais](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PremiosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[PremiosMontaña]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -382,7 +382,7 @@ CREATE TABLE [dbo].[PremiosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SancionXCarrera]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[SancionXCarrera]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -398,7 +398,7 @@ CREATE TABLE [dbo].[SancionXCarrera](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovimiento]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[TipoMovimiento]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -412,7 +412,7 @@ CREATE TABLE [dbo].[TipoMovimiento](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovPtosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[TipoMovPtosMontaña]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -426,7 +426,7 @@ CREATE TABLE [dbo].[TipoMovPtosMontaña](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipoMovPuntosRegular]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  Table [dbo].[TipoMovPuntosRegular]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -553,7 +553,7 @@ REFERENCES [dbo].[Llegada] ([Id])
 GO
 ALTER TABLE [dbo].[MovimientoPuntosRegularidad] CHECK CONSTRAINT [FK_MovimientoPuntosRegularidad_Llegada]
 GO
-ALTER TABLE [dbo].[MovimientoPuntosRegularidad]  WITH CHECK ADD  CONSTRAINT [FK_MovimientoPuntosRegularidad_TipoMovPuntosRegular] FOREIGN KEY([IdTIpo])
+ALTER TABLE [dbo].[MovimientoPuntosRegularidad]  WITH CHECK ADD  CONSTRAINT [FK_MovimientoPuntosRegularidad_TipoMovPuntosRegular] FOREIGN KEY([IdTipoMovPuntosRegular])
 REFERENCES [dbo].[TipoMovPuntosRegular] ([Id])
 GO
 ALTER TABLE [dbo].[MovimientoPuntosRegularidad] CHECK CONSTRAINT [FK_MovimientoPuntosRegularidad_TipoMovPuntosRegular]
@@ -588,7 +588,83 @@ REFERENCES [dbo].[Juez] ([Id])
 GO
 ALTER TABLE [dbo].[SancionXCarrera] CHECK CONSTRAINT [FK_SansionXCarrera_Juez]
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarCorredor]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarCarrera]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarCarrera] --Nombre del procedimiento
+	@inIdEtapa INT
+	,--Variables de entrada del SP
+	@inFecha DATE
+	,@inHoraInicio TIME
+	,@OutIdInsertarCarrera INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Etapas
+			WHERE id = @inIdEtapa
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe una etapa con ese id
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransInsertarCarrera
+
+		INSERT INTO dbo.Carrera (
+			IdEtapa
+			,Fecha
+			,HoraInicio
+			)
+		VALUES (
+			@inIdEtapa
+			,@inFecha
+			,@inHoraInicio
+			)
+
+		SET @OutIdInsertarCarrera = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransInsertarCarrera;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransInsertarCarrera;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarCorredor]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -648,7 +724,73 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarEquipo]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarDebitoSancion]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarDebitoSancion] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdSansionXCarrera INT
+	,@OutIdInsertarDebitoSancion INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].SancionXCarrera
+			WHERE id = @inIdSansionXCarrera
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe Sancion
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransDebitoSancion
+
+		INSERT INTO dbo.DebitoSancion (IdSansionXCarrera)
+		VALUES (@inIdSansionXCarrera)
+
+		SET @OutIdInsertarDebitoSancion = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransDebitoSancion;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransDebitoSancion;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarEquipo]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -708,7 +850,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarEtapa]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarEtapa]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -772,7 +914,105 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarGiro]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarGanadorPremioMont]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarGanadorPremioMont] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdCarrera INT
+	,@inIdCorredor INT
+	,@inIdPremioMontaña INT
+	,@OutIdInsertarGanadorPremioMont INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Carrera
+			WHERE id = @inIdCarrera
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe IGXEQXCorredor
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Corredor
+			WHERE id = @inIdCorredor
+			)
+	BEGIN
+		SET @OutResultCode = 5016 --No existe un TipoMovimiento con ese id
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].PremiosMontaña
+			WHERE id = @inIdPremioMontaña
+			)
+	BEGIN
+		SET @OutResultCode = 5017 --No existe un PremiosMontaña con ese id
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransGanadorPremioMont
+
+		INSERT INTO dbo.GanadorPremioMontaña (
+			IdCarrera
+			,IdCorredor
+			,IdPremioMontaña
+			)
+		VALUES (
+			@inIdCarrera
+			,@inIdCorredor
+			,@inIdPremioMontaña
+			)
+
+		SET @OutIdInsertarGanadorPremioMont = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransGanadorPremioMont;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransGanadorPremioMont;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarGiro]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -834,7 +1074,280 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarJuez]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarIGXEquipo]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarIGXEquipo] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdEquipo INT
+	,@inIdInstanciaGiro INT
+	,@InCodigoInstanciaGiro VARCHAR(100)
+	,@inTotalTiempo INT
+	,@inTotalPuntos INT	
+	,@OutIdInsertarIGXEquipo INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	PRINT(@inIdInstanciaGiro)
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Equipo
+			WHERE id = @inIdEquipo
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe un Equipo con ese id
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].[InstanciaGiro]
+			WHERE id = @inIdInstanciaGiro
+			)
+	BEGIN
+		SET @OutResultCode = 5016 --No existe una Intancia giro con ese id
+
+		RETURN
+	END;
+
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransInsertIGXEquipo
+
+		INSERT INTO dbo.InstGiroXEquipo (
+			IdEquipo
+			,IdInstanciaGiro
+			,TotalTiempo
+			,TotalPuntos
+			)
+		VALUES (
+			@inIdEquipo
+			,@inIdInstanciaGiro
+			,@inTotalTiempo
+			,@inTotalPuntos
+			)
+
+		SET @OutIdInsertarIGXEquipo = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransInsertIGXEquipo;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransInsertIGXEquipo;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarIGXEQXCorredor]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarIGXEQXCorredor] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdIGXEQ INT
+	,@inIdCorredor INT
+	,@inSumaTiempo INT
+	,@inSumaPuntosMes INT
+	,@inSumaPuntosMontaña INT
+	,@OutIdInsertarIGXEQXCorredor INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].InstGiroXEquipo
+			WHERE id = @inIdIGXEQ
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe InstGiroXEquipo
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Corredor
+			WHERE id = @inIdCorredor
+			)
+	BEGIN
+		SET @OutResultCode = 5016 --No existe una Corredor con ese id
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransIGXEQXCorredor
+
+		INSERT INTO dbo.IGXEQXCorredor (
+			IdIGXEQ
+			,IdCorredor
+			,SumaTiempo
+			,SumaPuntosMes
+			,SumaPuntosMontaña
+			)
+		VALUES (
+			@inIdIGXEQ
+			,@inIdCorredor
+			,@inSumaTiempo
+			,@inSumaPuntosMes
+			,@inSumaPuntosMontaña
+			)
+
+		SET @OutIdInsertarIGXEQXCorredor = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransIGXEQXCorredor;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransIGXEQXCorredor;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarInstanciaGiro]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarInstanciaGiro]
+	--Variables de entrada del SP
+	@inIdGiro INT
+	,@InCodigoInstancia VARCHAR(100)
+	,@inFechaInicio DATE
+	,@inFechaFin DATE
+	,@OutIdInsertarInstanciaGiro INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF	NOT EXISTS (
+			SELECT 1
+			FROM [dbo].[Giro] G
+			WHERE  G.Id= @inIdGiro
+			)
+	BEGIN
+		SET @OutResultCode = 5006 --NO EXISTE EL TIPO DE GIRO.
+		RETURN
+	END;
+
+	IF EXISTS (
+			SELECT 1
+			FROM [dbo].[InstanciaGiro] IG
+			WHERE  IG.CodigoInstancia = @InCodigoInstancia
+			)
+	BEGIN
+		SET @OutResultCode = 5007 --YA EXISTE LA INSTANCIA DEL GIRO.
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransInsertInstGiro
+
+		INSERT INTO dbo.InstanciaGiro (
+			IdGiro
+			,CodigoInstancia
+			,FechaInicio
+			,FechaFinal
+			)
+		VALUES (
+			@inIdGiro
+			,@InCodigoInstancia
+			,@inFechaInicio
+			,@inFechaFin
+			)
+
+		SET @OutIdInsertarInstanciaGiro = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransInsertInstGiro;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransInsertInstGiro;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarJuez]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -894,7 +1407,288 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarPais]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarLlegada]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarLlegada] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdCorredor INT
+	,@inIdCarrera INT
+	,@inHoraFin TIME
+	,@OutIdInsertarLlegada INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Corredor
+			WHERE id = @inIdCorredor
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe un corredor con ese id
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Carrera
+			WHERE id = @inIdCarrera
+			)
+	BEGIN
+		SET @OutResultCode = 5016 --No existe una carrera con ese id
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransInsertLlegada
+
+		INSERT INTO dbo.Llegada (
+			IdCorredor
+			,IdCarrera
+			,HoraFin
+			)
+		VALUES (
+			@inIdCorredor
+			,@inIdCarrera
+			,@inHoraFin
+			)
+
+		SET @OutIdInsertarLlegada = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransInsertLlegada;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransInsertLlegada;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarMovPtsMontaña]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarMovPtsMontaña] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdIGXEQXCorredor INT
+	,@inIdTipoMovPtosMontaña INT
+	,@inCantidadPuntos INT
+	,@inFecha DATE
+	,@OutIdInsertMovPtsMontaña INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].IGXEQXCorredor
+			WHERE id = @inIdIGXEQXCorredor
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe IGXEQXCorredor
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].TipoMovPtosMontaña
+			WHERE id = @inIdTipoMovPtosMontaña
+			)
+	BEGIN
+		SET @OutResultCode = 5016 --No existe un TipoMovimiento con ese id
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransMovPtsMontaña
+
+		INSERT INTO dbo.MovimientoPuntosMontaña (
+			IdIGXEQXCorredor
+			,IdTipoMovPtosMontaña
+			,CantidadPuntos
+			,Fecha
+			)
+		VALUES (
+			@inIdIGXEQXCorredor
+			,@inIdTipoMovPtosMontaña
+			,@inCantidadPuntos
+			,@inFecha
+			)
+
+		SET @OutIdInsertMovPtsMontaña = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransMovPtsMontaña;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransMovPtsMontaña;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarMovPtsRegularidad]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarMovPtsRegularidad] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdIGXEQXCorredor INT
+	,@inIdLlegada INT
+	,@inIdTipoMovPuntosRegular INT
+	,@inCantidadPuntos INT
+	,@inFecha DATE
+	,@OutIdInsertMovPtsRegular INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].IGXEQXCorredor
+			WHERE id = @inIdIGXEQXCorredor
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe IGXEQXCorredor
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Llegada
+			WHERE id = @inIdLlegada
+			)
+	BEGIN
+		SET @OutResultCode = 5016 --No existe un TipoMovimiento con ese id
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].TipoMovPuntosRegular
+			WHERE id = @inIdTipoMovPuntosRegular
+			)
+	BEGIN
+		SET @OutResultCode = 5017 --No existe una llegada con ese id
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransMovPtsRegular
+
+		INSERT INTO dbo.MovimientoPuntosRegularidad (
+			IdIGXEQXCorredor
+			,IdLlegada
+			,IdTipoMovPuntosRegular
+			,CantidadPuntos
+			,Fecha
+			)
+		VALUES (
+			@inIdIGXEQXCorredor
+			,@inIdLlegada
+			,@inIdTipoMovPuntosRegular
+			,@inCantidadPuntos
+			,@inFecha
+			)
+
+		SET @OutIdInsertMovPtsRegular = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransMovPtsRegular;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransMovPtsRegular;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarPais]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -954,7 +1748,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarPremiosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarPremiosMontaña]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1009,7 +1803,91 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarTipoMovimiento]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarSancionXCarrera]    Script Date: 2/1/2021 9:48:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE
+	
+
+ PROCEDURE [dbo].[InsertarSancionXCarrera] --Nombre del procedimiento
+	--Variables de entrada del SP
+	@inIdCorredor INT
+	,@inIdJuez INT
+	,@OutIdInsertarSancionXCarrera INT OUTPUT
+	,@OutResultCode INT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Corredor
+			WHERE id = @inIdCorredor
+			)
+	BEGIN
+		SET @OutResultCode = 5015 --No existe Corredor
+
+		RETURN
+	END;
+
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Juez
+			WHERE id = @inIdJuez
+			)
+	BEGIN
+		SET @OutResultCode = 5016 --No existe un Juez con ese id
+
+		RETURN
+	END;
+
+	BEGIN TRY
+		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+		BEGIN TRANSACTION TransSancionXCarrera
+
+		INSERT INTO dbo.SancionXCarrera (
+			IdCorredor
+			,IdJuez
+			)
+		VALUES (
+			@inIdCorredor
+			,@inIdJuez
+			)
+
+		SET @OutIdInsertarSancionXCarrera = SCOPE_IDENTITY();
+		SET @OutResultCode = 0;
+
+		COMMIT TRANSACTION TransSancionXCarrera;--Finaliza la transacción
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION TransSancionXCarrera;
+
+		INSERT INTO dbo.Errores --Tabla de Errores
+		VALUES (
+			SUSER_SNAME()
+			,ERROR_NUMBER()
+			,ERROR_STATE()
+			,ERROR_SEVERITY()
+			,ERROR_LINE()
+			,ERROR_PROCEDURE()
+			,ERROR_MESSAGE()
+			,GETDATE()
+			);
+
+		SET @OutResultCode = 50005;
+	END CATCH
+
+	SET NOCOUNT OFF
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[InsertarTipoMovimiento]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1069,7 +1947,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPtosMontaña]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPtosMontaña]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1129,7 +2007,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPuntosRegular]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[InsertarTipoMovPuntosRegular]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1189,7 +2067,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[ProcesarInstanciasGiro]    Script Date: 2/1/2021 8:32:51 AM ******/
+/****** Object:  StoredProcedure [dbo].[ProcesarInstanciasGiro]    Script Date: 2/1/2021 9:48:50 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1202,25 +2080,24 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	--SE DECLARAN VARIABLES.
+--SE DECLARAN VARIABLES.
 
 	DECLARE @lo INT, @hi INT
-	DECLARE @OutResult INT
+	DECLARE @OutId INT, @OutIdInstanciaGiro INT, @OutIdInsertarIGXEquipo INT
 
-	--Variables Instancia Giro
 	DECLARE @IdGiro INT,
 			@CodigoInstancia VARCHAR(100),
 			@FechaInicio DATE,
 			@FechaFin DATE
 
-	--Tabla Giro X Equipo
 	DECLARE @TablaGiroXEquipo TABLE (
 		Sec INT IDENTITY(1, 1),
 		CodigoInstanciaGiro VARCHAR(100),
 		Equipo INT
 	) 
+	DECLARE @CodigoInstanciaGiro VARCHAR(100),
+			@Equipo INT
 
-	--Tabla Corredores en Equipo en Giro
 	DECLARE @TablaCorredoresEnEquipoEnGiro  TABLE (
 			Sec INT IDENTITY(1, 1),
 			CodigoInstanciaGiro VARCHAR(100),
@@ -1228,8 +2105,9 @@ BEGIN
 			Corredor INT,
 			NumeroCamisa INT
 		) 
+	DECLARE @Corredor INT,
+			@NumeroCamisa INT
 
-	--Tabla de Carreras
 	DECLARE @TablaCarrera TABLE (
 		Sec INT IDENTITY(1, 1),
 		CodigoInstanciaGiro VARCHAR(100),
@@ -1238,13 +2116,18 @@ BEGIN
 		FechaCarrera DATE,
 		HoraInicio TIME
 	) 
+	DECLARE @CodigoCarrera VARCHAR(100),
+			@IdEtapa INT,
+			@FechaCarrera DATE,
+			@HoraInicio TIME
 
 	DECLARE @TablaFinalCorredoresEnCarrera TABLE (
 		Sec INT IDENTITY(1, 1),
 		CodigoCarrera VARCHAR(100),
 		NumeroCamisa INT,
-		HoraLlegada DATE
+		HoraLlegada TIME
 	) 
+	DECLARE @HoraLlegada TIME
 
 	DECLARE @TablaSancionCarrera TABLE (
 		Sec INT IDENTITY(1,1),
@@ -1254,8 +2137,11 @@ BEGIN
 		MinutosCastigo INT,
 		Descripcion VARCHAR(100)
 	)
+	DECLARE @IdJuez INT,
+			@MinutosCastigo INT,
+			@Descripcion VARCHAR(100)
 
-	--SE LE ASIGNAN VALORES A LAS VARIABLES.
+--SE LE ASIGNAN VALORES A LAS TABLAS Y LAS VARIABLES.
 
 	SELECT	@IdGiro = ref.value('@IdGiro', 'INT'),
 			@CodigoInstancia = ref.value('@CodigoInstancia', 'VARCHAR(100)'),
@@ -1263,7 +2149,6 @@ BEGIN
 			@FechaFin = ref.value('@FechaFin', 'DATE')
 	FROM @InXML.nodes('InstanciaGiro') AS InstanciaGiro(ref)
 
-	--Se le asignan valores a la tabla Giro X Equipo
 	INSERT INTO @TablaGiroXEquipo (
 		CodigoInstanciaGiro,
 		Equipo
@@ -1272,7 +2157,6 @@ BEGIN
 		ref.value('@Equipo', 'INT')
 	FROM @InXML.nodes('InstanciaGiro/GiroXEquipo') AS GIXEQ(ref)
 
-	--Se le asignan valores a la tabla Giro X Corredores X Equipo X Giro
 	INSERT INTO @TablaCorredoresEnEquipoEnGiro (
 		CodigoInstanciaGiro,
 		Equipo,
@@ -1297,42 +2181,148 @@ BEGIN
 		ref.value('@IdEtapa', 'INT'),
 		ref.value('@FechaCarrera', 'DATE'),
 		ref.value('@HoraInicio', 'TIME')
-	FROM  @InXML.nodes('InstanciaGiro/Carrera') AS CorredoreEqXGiro(ref)
+	FROM @InXML.nodes('InstanciaGiro/Carrera') AS Carrera(ref)
 
-	SELECT *
-	FROM @TablaCarrera
-	--BEGIN TRY
-	--	--SE PROCESAN LAS INSTANCIAS DE GIRO
-	--	SELECT @lo = MIN(TablaIG.Sec),
-	--		@hi = MAX(TablaIG.Sec)
-	--	FROM @TablaInstanciasGiro AS TablaIG
+	INSERT INTO @TablaFinalCorredoresEnCarrera(
+		CodigoCarrera,
+		NumeroCamisa,
+		HoraLlegada 
+	)
+	SELECT ref.value('@CodigoCarrera', 'VARCHAR(100)'),
+		ref.value('@NumeroCamisa', 'INT'),
+		ref.value('@HoraLlegada', 'TIME')
+	FROM @InXML.nodes('InstanciaGiro/FinalCorredoresEnCarrera ') AS F(ref)
 
-	--	WHILE @lo <= @hi
-	--	BEGIN
+	INSERT INTO @TablaSancionCarrera(
+		CodigoCarrera,
+		IdJuez,
+		NumeroCamisa,
+		MinutosCastigo,
+		Descripcion
+	)
+	SELECT ref.value('@CodigoCarrera', 'VARCHAR(100)'),
+		ref.value('@IdJuez', 'INT'),
+		ref.value('@NumeroCamisa', 'INT'),
+		ref.value('@MinutosCastigo', 'INT'),
+		ref.value('@Descripcion', 'VARCHAR(100)')
+	FROM @InXML.nodes('InstanciaGiro/FinalCorredoresEnCarrera ') AS SancionCarrera(ref)
+	
+	EXEC [dbo].[InsertarInstanciaGiro] -- SE INSERTAN LAS INSTANCIAS DE GIROS.
+		@idGiro,
+		@CodigoInstancia,
+		@FechaInicio,
+		@FechaFin,
+		@OutIdInstanciaGiro OUTPUT,
+		@OutResultCode OUTPUT
 
-	--		EXEC [dbo].[InsertarInstanciaGiro]
-				
+	SELECT @hi = MAX(Sec), --SE INICIALIZAN LOS CONTADORES DE GIROS X EQUIPOS
+		@lo = MIN(Sec)
+	FROM @TablaGiroXEquipo 
+	DECLARE @OutResultCodeIGXEQ INT
+	WHILE @lo <= @hi --SE INSERTAN LOS GIROS X EQUIPOS
+		BEGIN 
+			SELECT @CodigoInstanciaGiro = CodigoInstanciaGiro,
+				@Equipo = Equipo	
+			FROM @TablaGiroXEquipo 
+			WHERE Sec = @lo
+
+			
+			EXEC [dbo].[InsertarIGXEquipo]
+				@Equipo,
+				@OutIdInstanciaGiro,
+				@CodigoInstanciaGiro,
+				0,
+				0,
+				@OutIdInsertarIGXEquipo OUTPUT,
+				@OutResultCodeIGXEQ OUTPUT
+
+			PRINT(@OutResultCodeIGXEQ)
+			SET @lo = @lo + 1
+		END;
+
+	--SELECT @hi = MAX(Sec), --SE INICIALIZAN LOS CONTADORES DE @TablaCorredoresEnEquipoEnGiro
+	--		@lo = MIN(Sec)
+	--FROM @TablaCorredoresEnEquipoEnGiro
+	--WHILE @lo <= @hi --SE INSERTAN LOS CORREDORES EN EQUIPO EN GIRO
+	--	BEGIN 
+	--		SELECT @CodigoInstanciaGiro = CodigoInstanciaGiro,
+	--			@Equipo = Equipo,
+	--			@Corredor = Corredor,
+	--			@NumeroCamisa = NumeroCamisa
+	--		FROM @TablaCorredoresEnEquipoEnGiro
+	--		WHERE Sec = @lo
+
+	--		EXEC [dbo].[InsertarCorredoresEnEquipoEnGiro]
+	--			@CodigoInstanciaGiro,
+	--			@Equipo, 
+	--			@Corredor,
+	--			@NumeroCamisa,
+	--			@OutResultCode 
+
+	--		SET @lo = @lo + 1
 	--	END;
-	--END TRY
 
-	--BEGIN CATCH
-	--	IF @@TRANCOUNT > 0
-	--		ROLLBACK TRANSACTION ProcesarIG;
+	--SELECT @hi = MAX(Sec), --SE INICIALIZAN LOS CONTADORES DE @TablaCarrera
+	--		@lo = MIN(Sec)
+	--FROM @TablaCarrera
+	--WHILE @lo <= @hi --SE INSERTA LAS CARRERAS
+	--	BEGIN
+	--		SELECT @CodigoInstanciaGiro = CodigoInstanciaGiro,
+	--			@CodigoCarrera = CodigoCarrera,
+	--			@IdEtapa = IdEtapa,
+	--			@FechaCarrera = FechaCarrera,
+	--			@HoraInicio = HoraInicio
+	--		FROM @TablaCarrera
+	--		WHERE Sec = @lo
+			
+	--		EXEC [dbo].[InsertarCarrera]
+	--			@CodigoInstanciaGiro,
+	--			@CodigoCarrera, 
+	--			@IdEtapa,
+	--			@FechaCarrera,
+	--			@HoraInicio,
+	--			@OutResultCode 
+	--	END;
 
-	--	INSERT INTO [dbo].[Errores]    --Tabla de Errores
-	--	VALUES (
-	--		SUSER_SNAME(),
-	--		ERROR_NUMBER(),
-	--		ERROR_STATE(),
-	--		ERROR_SEVERITY(),
-	--		ERROR_LINE(),
-	--		ERROR_PROCEDURE(),
-	--		ERROR_MESSAGE(),
-	--		GETDATE()
-	--		);
+	--SELECT @hi = MAX(Sec), --SE INICIALIZAN LOS CONTADORES DE @TablaFinalCorredoresEnCarrera
+	--		@lo = MIN(Sec)
+	--FROM @TablaFinalCorredoresEnCarrera
+	--WHILE @lo <= @hi --SE INSERTAN LA FINAL CORREDORES EN CARRERA.
+	--	BEGIN
+	--		SELECT @CodigoCarrera = CodigoCarrera,
+	--			@NumeroCamisa = NumeroCamisa,
+	--			@HoraLlegada = HoraLlegada
+	--		FROM @TablaFinalCorredoresEnCarrera
+	--		WHERE Sec = @lo		
+			
+	--		EXEC [dbo].[InsertarFinalCorredoresEnCarrera]
+	--			@CodigoCarrera,
+	--			@NumeroCamisa, 
+	--			@HoraLlegada,
+	--			@OutResultCode 
+	--	END
 
-	--	SET @OutResultCode = 50005;
-	--END CATCH
+	--SELECT @hi = MAX(Sec), --SE INICIALIZAN LOS CONTADORES DE @TablaSancionCarrera
+	--		@lo = MIN(Sec)
+	--FROM @TablaSancionCarrera
+	--WHILE @lo <= @hi --SE INSERTAN LA SANCION CARRERA
+	--	BEGIN
+	--		SELECT @CodigoCarrera = CodigoCarrera,
+	--			@IdJuez = IdJuez,
+	--			@NumeroCamisa = NumeroCamisa,
+	--			@MinutosCastigo = MinutosCastigo,
+	--			@Descripcion = Descripcion
+	--		FROM @TablaSancionCarrera
+	--		WHERE Sec = @lo		
+			
+	--		EXEC [dbo].[InsertarSancionCarrera]
+	--			@CodigoCarrera,
+	--			@IdJuez, 
+	--			@NumeroCamisa,
+	--			@MinutosCastigo,
+	--			@Descripcion,
+	--			@OutResultCode 
+	--	END
 
 	SET NOCOUNT OFF
 END;
