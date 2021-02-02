@@ -14,7 +14,6 @@ ALTER PROCEDURE [dbo].[InsertarMovTiempo] --Nombre del procedimiento
 	--Variables de entrada del SP
 	@inIdIGXEQXCorredor INT
 	,@inIdTipoMovimiento INT
-	,@inIdLlegada INT
 	,@inCantTiempo INT
 	,@inFecha DATE
 	,@OutIdInsertarMovTiempo INT OUTPUT
@@ -46,17 +45,7 @@ BEGIN
 		RETURN
 	END;
 
-	IF NOT EXISTS (
-			SELECT 1
-			FROM [dbo].Llegada
-			WHERE id = @inIdLlegada
-			)
-	BEGIN
-		SET @OutResultCode = 5016 --No existe una llegada con ese id
-
-		RETURN
-	END;
-
+	
 	BEGIN TRY
 		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
 
@@ -65,14 +54,12 @@ BEGIN
 		INSERT INTO dbo.MovTiempo (
 			IdIGXEQXCorredor
 			,IdTipoMovimiento
-			,IdLlegada
 			,CantTiempo
 			,Fecha
 			)
 		VALUES (
 			@inIdIGXEQXCorredor
 			,@inIdTipoMovimiento
-			,@inIdLlegada
 			,@inCantTiempo
 			,@inFecha
 			)
