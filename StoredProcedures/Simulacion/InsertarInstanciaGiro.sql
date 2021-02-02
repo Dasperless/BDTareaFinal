@@ -13,6 +13,8 @@ CREATE
 ALTER PROCEDURE [dbo].[InsertarInstanciaGiro] --Nombre del procedimiento
 	--Variables de entrada del SP
 	@inIdGiro INT
+	,@inCodigoInstancia	VARCHAR(50)
+	,@inYear DATE
 	,@inFechaInicio DATE
 	,@inFechaFin DATE
 	,@OutIdInsertarInstanciaGiro INT OUTPUT
@@ -40,11 +42,15 @@ BEGIN
 
 		INSERT INTO dbo.InstanciaGiro (
 			IdGiro
+			,CodigoInstancia
+			,Year
 			,FechaInicio
 			,FechaFinal
 			)
 		VALUES (
 			@inIdGiro
+			,@inCodigoInstancia
+			,@inYear
 			,@inFechaInicio
 			,@inFechaFin
 			)

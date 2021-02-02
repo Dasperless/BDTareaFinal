@@ -14,6 +14,9 @@ ALTER PROCEDURE [dbo].[InsertarIGXEQXCorredor] --Nombre del procedimiento
 	--Variables de entrada del SP
 	@inIdIGXEQ INT
 	,@inIdCorredor INT
+	,@inCodigoInstanciaGiro VARCHAR(50)
+	,@inNumeroCamisa INT
+	,@inEquipo INT 
 	,@inSumaTiempo INT
 	,@inSumaPuntosMes INT
 	,@inSumaPuntosMontaña INT
@@ -54,6 +57,9 @@ BEGIN
 		INSERT INTO dbo.IGXEQXCorredor (
 			IdIGXEQ
 			,IdCorredor
+			,CodigoInstanciaGiro
+			,NumeroCamisa
+			,Equipo
 			,SumaTiempo
 			,SumaPuntosMes
 			,SumaPuntosMontaña
@@ -61,6 +67,9 @@ BEGIN
 		VALUES (
 			@inIdIGXEQ
 			,@inIdCorredor
+			,@inCodigoInstanciaGiro
+			,@inNumeroCamisa
+			,@inEquipo
 			,@inSumaTiempo
 			,@inSumaPuntosMes
 			,@inSumaPuntosMontaña

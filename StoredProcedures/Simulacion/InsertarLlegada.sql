@@ -14,7 +14,10 @@ ALTER PROCEDURE [dbo].[InsertarLlegada] --Nombre del procedimiento
 	--Variables de entrada del SP
 	@inIdCorredor INT
 	,@inIdCarrera INT
-	,@inHoraFin TIME
+	,@inIdMovTiempo INT 
+	,@inCodigoCarrera VARCHAR(50)
+	,@inNumeroCamisa INT
+	,@inHoraFin TIME(7)
 	,@OutIdInsertarLlegada INT OUTPUT
 	,@OutResultCode INT OUTPUT
 AS
@@ -44,6 +47,17 @@ BEGIN
 		RETURN
 	END;
 
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].MovTiempo
+			WHERE id = @inIdMovTiempo
+			)
+	BEGIN
+		SET @OutResultCode = 5017 --No existe un mov tiempo con ese id
+
+		RETURN
+	END;
+
 	BEGIN TRY
 		SET TRANSACTION ISOLATION LEVEL READ COMMITTED
 
@@ -52,11 +66,17 @@ BEGIN
 		INSERT INTO dbo.Llegada (
 			IdCorredor
 			,IdCarrera
+			,IdMovTiempo
+			,CodigoCarrera
+			,NumeroCamisa
 			,HoraFin
 			)
 		VALUES (
 			@inIdCorredor
 			,@inIdCarrera
+			,@inIdMovTiempo
+			,@inCodigoCarrera
+			,@inNumeroCamisa
 			,@inHoraFin
 			)
 

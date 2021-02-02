@@ -12,13 +12,30 @@ CREATE
 
 ALTER PROCEDURE [dbo].[InsertarSancionXCarrera] --Nombre del procedimiento
 	--Variables de entrada del SP
-	@inIdCorredor INT
+	@inIdCarrera INT
+	,@inIdCorredor INT
 	,@inIdJuez INT
+	,@inCodigoCarrera VARCHAR(50)
+	,@inNumeroCamisa INT
+	,@inDescripcion VARCHAR(100)
+	,@inMinutosCastigo INT
 	,@OutIdInsertarSancionXCarrera INT OUTPUT
 	,@OutResultCode INT OUTPUT
 AS
 BEGIN
 	SET NOCOUNT ON;
+
+	--Validaciones
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [dbo].Carrera
+			WHERE id = @inIdCarrera
+			)
+	BEGIN
+		SET @OutResultCode = 5020 --No existe Carrera 
+
+		RETURN
+	END;
 
 	--Validaciones
 	IF NOT EXISTS (
@@ -48,13 +65,23 @@ BEGIN
 
 		BEGIN TRANSACTION TransSancionXCarrera
 
-		INSERT INTO dbo.SancionXCarrera (
-			IdCorredor
+		INSERT INTO dbo.SancionXCarrera(
+			IdCarrera
+			,IdCorredor
 			,IdJuez
+			,CodigoCarrera
+			,NumeroCamisa
+			,Descripcion
+			,MinutosCastigo
 			)
 		VALUES (
-			@inIdCorredor
+			@inIdCarrera
+			,@inIdCorredor
 			,@inIdJuez
+			,@inCodigoCarrera
+			,@inNumeroCamisa
+			,@inDescripcion
+			,@inMinutosCastigo
 			)
 
 		SET @OutIdInsertarSancionXCarrera = SCOPE_IDENTITY();

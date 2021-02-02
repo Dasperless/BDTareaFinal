@@ -15,6 +15,8 @@ ALTER PROCEDURE [dbo].[InsertarGanadorPremioMont] --Nombre del procedimiento
 	@inIdCarrera INT
 	,@inIdCorredor INT
 	,@inIdPremioMontaña INT
+	,@inCodigoCarrera VARCHAR(50)
+	,@inNumeroCamisa INT 
 	,@OutIdInsertarGanadorPremioMont INT OUTPUT
 	,@OutResultCode INT OUTPUT
 AS
@@ -64,11 +66,15 @@ BEGIN
 			IdCarrera
 			,IdCorredor
 			,IdPremioMontaña
+			,CodigoCarrera
+			,NumeroCamisa
 			)
 		VALUES (
 			@inIdCarrera
 			,@inIdCorredor
 			,@inIdPremioMontaña
+			,@inCodigoCarrera
+			,@inNumeroCamisa
 			)
 
 		SET @OutIdInsertarGanadorPremioMont = SCOPE_IDENTITY();

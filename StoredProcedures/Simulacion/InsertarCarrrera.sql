@@ -12,8 +12,9 @@ CREATE
 
 ALTER PROCEDURE [dbo].[InsertarCarrera] --Nombre del procedimiento
 	@inIdEtapa INT
-	,--Variables de entrada del SP
-	@inFecha DATE
+	,@inCodigoInstanciaGiro VARCHAR(50)
+	,@inCodigoCarrera INT 
+	,@inFecha DATE
 	,@inHoraInicio TIME
 	,@OutIdInsertarCarrera INT OUTPUT
 	,@OutResultCode INT OUTPUT
@@ -40,11 +41,15 @@ BEGIN
 
 		INSERT INTO dbo.Carrera (
 			IdEtapa
+			,CodigoInstanciaGiro
+			,CodigoCarrera
 			,Fecha
 			,HoraInicio
 			)
 		VALUES (
 			@inIdEtapa
+			,@inCodigoInstanciaGiro
+			,@inCodigoCarrera
 			,@inFecha
 			,@inHoraInicio
 			)

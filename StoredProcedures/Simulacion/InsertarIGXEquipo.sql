@@ -14,6 +14,7 @@ ALTER PROCEDURE [dbo].[InsertarIGXEquipo] --Nombre del procedimiento
 	--Variables de entrada del SP
 	@inIdEquipo INT
 	,@inIdInstanciaGiro INT
+	,@inCodigoInstanciaGiro VARCHAR(50)
 	,@inTotalTiempo INT
 	,@inTotalPuntos INT
 	,@OutIdInsertarIGXEquipo INT OUTPUT
@@ -53,12 +54,14 @@ BEGIN
 		INSERT INTO dbo.InstGiroXEquipo (
 			IdEquipo
 			,IdInstanciaGiro
+			,CodigoInstanciaGiro
 			,TotalTiempo
 			,TotalPuntos
 			)
 		VALUES (
 			@inIdEquipo
 			,@inIdInstanciaGiro
+			,@inCodigoInstanciaGiro
 			,@inTotalTiempo
 			,@inTotalPuntos
 			)
