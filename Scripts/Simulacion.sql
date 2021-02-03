@@ -67,18 +67,18 @@ WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS.
 	END;
 
 --TODAS LAS TABLAS SE INSERTA CORRECTAMENTE
---SELECT * FROM InstanciaGiro
---SELECT * FROM InstGiroXEquipo
---SELECT * FROM IGXEQXCorredor
---SELECT * FROM Carrera
---SELECT * FROM MovTiempo
---SELECT * FROM Llegada
---SELECT * FROM SancionXCarrera
---SELECT * FROM GanadorPremioMontaña G
---INNER JOIN Carrera C ON C.Id = G.IdCarrera
---INNER JOIN PremiosMontaña P ON P.Id = G.IdPremioMontaña
+SELECT * FROM InstanciaGiro
+SELECT * FROM InstGiroXEquipo
+SELECT * FROM IGXEQXCorredor
+SELECT * FROM Carrera
+SELECT * FROM MovTiempo
+SELECT * FROM Llegada
+SELECT * FROM SancionXCarrera
+SELECT * FROM GanadorPremioMontaña G
+INNER JOIN Carrera C ON C.Id = G.IdCarrera
+INNER JOIN PremiosMontaña P ON P.Id = G.IdPremioMontaña
 
---SELECT * FROM MovimientoPuntosMontaña
+SELECT * FROM MovimientoPuntosMontaña
 SELECT * FROM MovimientoPuntosRegularidad
 SELECT * FROM MovTiempo
 

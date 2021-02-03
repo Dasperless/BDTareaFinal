@@ -14,7 +14,7 @@ ALTER PROCEDURE [dbo].[InsertarMovTiempo] --Nombre del procedimiento
 	--Variables de entrada del SP
 	@inIdIGXEQXCorredor INT
 	,@inIdTipoMovimiento INT
-	,@inCantTiempo INT
+	,@inCantTiempo int
 	,@inFecha DATE
 	,@OutIdInsertarMovTiempo INT OUTPUT
 	,@OutResultCode INT OUTPUT
