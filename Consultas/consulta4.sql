@@ -39,7 +39,7 @@ BEGIN
 	SET @idInstanciaGiro = (
 			SELECT id
 			FROM dbo.InstanciaGiro
-			WHERE IdGiro = @idGiro and ano = @inAno
+			WHERE IdGiro = @idGiro
 			)
 	
 	BEGIN TRY
@@ -52,7 +52,7 @@ BEGIN
 		FROM dbo.InstGiroXEquipo eq
 		INNER JOIN dbo.Equipo eq2 ON eq.IdEquipo = eq2.Id
 		WHERE eq.IdInstanciaGiro = @idInstanciaGiro
-		ORDER BY eq.TotalTiempo ASC
+		ORDER BY eq.TotalTiempo DESC
 
 		SET @OutIdConsulta4 = SCOPE_IDENTITY();
 		SET @OutResultCode = 0;

@@ -12,8 +12,7 @@ CREATE
 
 ALTER PROCEDURE [dbo].[InsertarMovPtsRegularidad] --Nombre del procedimiento
 	--Variables de entrada del SP
-	@inPuntosReg INT 
-	,@inIdIGXEQXCorredor INT
+	@inIdIGXEQXCorredor INT
 	,@inIdLlegada INT
 	,@inIdTipoMovPuntosRegular INT
 	,@inCantidadPuntos INT
@@ -77,18 +76,7 @@ BEGIN
 			,@inCantidadPuntos
 			,@inFecha
 			)
-		IF (@inIdTipoMovPuntosRegular = 1)
-		BEGIN
-			UPDATE IGXEQXCorredor
-			SET SumaPuntosReg = SumaPuntosReg + @inPuntosReg
-			WHERE id = @inIdIGXEQXCorredor
-		END;
-		ELSE
-		BEGIN
-			UPDATE IGXEQXCorredor
-			SET SumaPuntosReg = SumaPuntosReg - @inPuntosReg
-			WHERE id = @inIdIGXEQXCorredor
-		END;
+
 		SET @OutIdInsertMovPtsRegular = SCOPE_IDENTITY();
 		SET @OutResultCode = 0;
 

@@ -12,19 +12,16 @@ CREATE
 
 ALTER PROCEDURE [dbo].[InsertarMovTiempo] --Nombre del procedimiento
 	--Variables de entrada del SP
-	@inTiempo TIME(7)
-	,@inIdIGXEQXCorredor INT
+	@inIdIGXEQXCorredor INT
 	,@inIdTipoMovimiento INT
-	,@inCantTiempo TIME(7)
+	,@inCantTiempo INT
 	,@inFecha DATE
 	,@OutIdInsertarMovTiempo INT OUTPUT
 	,@OutResultCode INT OUTPUT
 AS
 BEGIN
 	SET NOCOUNT ON;
-	DECLARE @segundos INT
 
-	SET @segundos = FORMAT(@inTiempo,'hh') * 3600 + FORMAT(@inTiempo,'mm') * 60 + FORMAT(@inTiempo,'ss')
 	--Validaciones
 	IF NOT EXISTS (
 			SELECT 1
@@ -66,18 +63,7 @@ BEGIN
 			,@inCantTiempo
 			,@inFecha
 			)
-		IF (@inIdTipoMovimiento = 2)
-		BEGIN
-			UPDATE IGXEQXCorredor
-			SET SumaTiempo = SumaTiempo + @segundos
-			WHERE id = @inIdIGXEQXCorredor
-		END;
-		ELSE
-		BEGIN
-			UPDATE IGXEQXCorredor
-			SET SumaTiempo = SumaTiempo - @segundos
-			WHERE id = @inIdIGXEQXCorredor
-		END;
+
 		SET @OutIdInsertarMovTiempo = SCOPE_IDENTITY();
 		SET @OutResultCode = 0;
 
