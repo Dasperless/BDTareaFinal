@@ -36,7 +36,7 @@ SELECT @AñoInicio = MIN(Año),
 	@AñoFin = MAX(Año)
 FROM @TablaAñoProcesar
 
-WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS.
+WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS. 
 	BEGIN
 		SELECT @lo = MIN(ref.value('@IdGiro', 'INT')),
 			@hi = MAX(ref.value('@IdGiro', 'INT'))
@@ -58,6 +58,7 @@ WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS.
 					@AñoInicio,
 					@OutResultCode OUTPUT
 
+						
 				--SELECT @OutResultCode
 				SET @lo = @lo + 1
 			END;
@@ -65,14 +66,21 @@ WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS.
 		SET @AñoInicio = @AñoInicio + 1
 	END;
 
-SELECT * FROM InstanciaGiro
-SELECT * FROM InstGiroXEquipo
-SELECT * FROM IGXEQXCorredor
-SELECT * FROM Carrera
-SELECT * FROM MovTiempo
-SELECT * FROM Llegada
-SELECT * FROM SancionXCarrera
-SELECT * FROM GanadorPremioMontaña
+--TODAS LAS TABLAS SE INSERTA CORRECTAMENTE
+--SELECT * FROM InstanciaGiro
+--SELECT * FROM InstGiroXEquipo
+--SELECT * FROM IGXEQXCorredor
+--SELECT * FROM Carrera
+--SELECT * FROM MovTiempo
+--SELECT * FROM Llegada
+--SELECT * FROM SancionXCarrera
+--SELECT * FROM GanadorPremioMontaña G
+--INNER JOIN Carrera C ON C.Id = G.IdCarrera
+--INNER JOIN PremiosMontaña P ON P.Id = G.IdPremioMontaña
+
+--SELECT * FROM MovimientoPuntosMontaña
+SELECT * FROM MovimientoPuntosRegularidad
+--SELECT * FROM MovTiempo
 
 --DELETE InstanciaGiro
 --DELETE InstGiroXEquipo
@@ -82,6 +90,10 @@ SELECT * FROM GanadorPremioMontaña
 --DELETE Llegada
 --DELETE SancionXCarrera
 --DELETE GanadorPremioMontaña
+--DELETE MovimientoPuntosMontaña
+--DELETE MovimientoPuntosRegularidad
+
+
 
 
 

@@ -18,7 +18,7 @@ ALTER PROCEDURE [dbo].[InsertarIGXEQXCorredor] --Nombre del procedimiento
 	,@inNumeroCamisa INT
 	,@inEquipo INT 
 	,@inSumaTiempo INT
-	,@inSumaPuntosMes INT
+	,@inSumaPuntosReg INT
 	,@inSumaPuntosMontaña INT
 	,@OutIdInsertarIGXEQXCorredor INT OUTPUT
 	,@OutResultCode INT OUTPUT
@@ -61,7 +61,7 @@ BEGIN
 			,NumeroCamisa
 			,Equipo
 			,SumaTiempo
-			,SumaPuntosMes
+			,SumaPuntosReg
 			,SumaPuntosMontaña
 			)
 		VALUES (
@@ -71,7 +71,7 @@ BEGIN
 			,@inNumeroCamisa
 			,@inEquipo
 			,@inSumaTiempo
-			,@inSumaPuntosMes
+			,@inSumaPuntosReg
 			,@inSumaPuntosMontaña
 			)
 
