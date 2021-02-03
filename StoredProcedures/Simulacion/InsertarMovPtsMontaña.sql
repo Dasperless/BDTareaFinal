@@ -12,7 +12,8 @@ CREATE
 
 ALTER PROCEDURE [dbo].[InsertarMovPtsMontaña] --Nombre del procedimiento
 	--Variables de entrada del SP
-	@inIdIGXEQXCorredor INT
+	@inPuntosMontaña INT
+	,@inIdIGXEQXCorredor INT
 	,@inIdTipoMovPtosMontaña INT
 	,@inCantidadPuntos INT
 	,@inFecha DATE
@@ -62,6 +63,19 @@ BEGIN
 			,@inCantidadPuntos
 			,@inFecha
 			)
+
+		IF (@inIdTipoMovPtosMontaña = 1)
+		BEGIN
+			UPDATE IGXEQXCorredor
+			SET SumaPuntosMontaña = SumaPuntosMontaña + @inPuntosMontaña
+			WHERE id = @inIdIGXEQXCorredor
+		END;
+		ELSE
+		BEGIN
+			UPDATE IGXEQXCorredor
+			SET SumaPuntosMontaña = SumaPuntosMontaña - @inPuntosMontaña
+			WHERE id = @inIdIGXEQXCorredor
+		END;
 
 		SET @OutIdInsertMovPtsMontaña = SCOPE_IDENTITY();
 		SET @OutResultCode = 0;

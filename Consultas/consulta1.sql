@@ -48,10 +48,10 @@ BEGIN
 	SET @idInstanciaGiro = (
 			SELECT id
 			FROM dbo.InstanciaGiro
-			WHERE IdGiro = @idGiro
+			WHERE IdGiro = @idGiro and ano = @inAno
 			)
 	SET @codigoInstanciaGiro = (
-			SELECT codigoInstanciaGiro
+			SELECT TOP(1) codigoInstanciaGiro
 			FROM dbo.InstGiroXEquipo
 			WHERE IdInstanciaGiro = @idInstanciaGiro
 			)
@@ -66,7 +66,7 @@ BEGIN
 		FROM dbo.IGXEQXCorredor co
 		INNER JOIN dbo.Corredor co2 ON co.IdCorredor = co2.Id
 		WHERE co.CodigoInstanciaGiro = @codigoInstanciaGiro
-		ORDER BY co.SumaTiempo DESC
+		ORDER BY co.SumaTiempo ASC
 
 		SET @OutIdConsulta1 = SCOPE_IDENTITY();
 		SET @OutResultCode = 0;
