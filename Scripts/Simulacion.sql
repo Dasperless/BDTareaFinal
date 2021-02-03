@@ -80,7 +80,7 @@ WHILE @AñoInicio <= @AñoFin --SE PROCESAN LOS AÑOS.
 
 --SELECT * FROM MovimientoPuntosMontaña
 SELECT * FROM MovimientoPuntosRegularidad
---SELECT * FROM MovTiempo
+SELECT * FROM MovTiempo
 
 --DELETE InstanciaGiro
 --DELETE InstGiroXEquipo
